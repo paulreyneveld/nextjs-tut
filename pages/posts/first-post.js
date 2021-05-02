@@ -1,21 +1,20 @@
 import Head from 'next/head'
-import Link from 'next/link'
-import Layout from '../../components/layout'
+import Layout, { siteTitle } from '../../components/layout'
+import utilStyles from '../../styles/utils.module.css'
 
-export default function FirstPost() {
+export default function Home() {
   return (
-    <>
-    <Layout>
-    <Head>
-        <title>First Post</title>
-    </Head>
-      <h1>First Post</h1>
-      <h2>
-        <Link href="/">
-          <a>Back to home</a>
-        </Link>
-      </h2>
-      </Layout>
-    </>
+    <Layout home>
+      <Head>
+        <title>{siteTitle}</title>
+      </Head>
+      <section className={utilStyles.headingMd}>
+        <p>[Your Self Introduction]</p>
+        <p>
+          (This is a sample website - you’ll be building a site like this on{' '}
+          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
+        </p>
+      </section>
+    </Layout>
   )
 }
